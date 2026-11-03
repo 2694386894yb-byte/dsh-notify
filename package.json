@@ -1,0 +1,21 @@
+{
+  "name": "dsh-notify",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DSH 通知守护进程：审批/提问/完成 → 电脑系统通知 + 微信单向推送（不执行微信指令）",
+  "main": "bin/dsh-notify.mjs",
+  "bin": {
+    "dsh-notify": "./bin/dsh-notify.mjs"
+  },
+  "scripts": {
+    "start": "node bin/dsh-notify.mjs run",
+    "once": "node bin/dsh-notify.mjs once",
+    "doctor": "node bin/dsh-notify.mjs doctor",
+    "test": "node --test test/*.test.mjs"
+  },
+  "engines": {
+    "node": ">=22.5"
+  },
+  "license": "MIT"
+}

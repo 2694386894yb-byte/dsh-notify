@@ -1,0 +1,37 @@
+{
+  "$comment": "复制到 ~/.dsh/notify/config.json 后按需改；缺省值与这里一致。",
+  "stateDir": "~/.dsh/notify",
+  "sessions": {
+    "root": "~/.dsh/sessions",
+    "startupLookbackMinutes": 120
+  },
+  "server": {
+    "port": 19400,
+    "host": "127.0.0.1"
+  },
+  "notify": {
+    "approval": true,
+    "question": true,
+    "turnDone": true,
+    "turnError": true,
+    "minTurnSeconds": 20,
+    "escalateAfterSeconds": [180, 600, 1800],
+    "pendingMaxAgeHours": 12,
+    "quietHours": null,
+    "includeSubagents": false
+  },
+  "channels": {
+    "desktop": {
+      "enabled": true,
+      "fallbackWhenWidgetStale": true,
+      "widgetStaleSeconds": 30
+    },
+    "wechat": {
+      "enabled": true,
+      "statePath": "~/.dsh/wechat/state.json",
+      "selfReplyThrottleMinutes": 10,
+      "maxQueue": 5,
+      "events": ["approval", "turn-done", "turn-error"]
+    }
+  }
+}
